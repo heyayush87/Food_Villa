@@ -1,12 +1,13 @@
-Food Villa 🍴
-Discover nearby restaurants with Food Villa! Search for your favorite spots, browse detailed menus, and seamlessly navigate between pages using our app's intuitive routing. Add dishes to your cart and enjoy a hassle-free dining experience.
+#Food Villa 🍴
+   A dynamic and responsive food delivery web application built using ReactJS, showcasing efficient design and functionality for modern web development.
 
-  #🚀TECH STACK🚀
-   -Frontend Library: React JS
-   -Styling: Tailwind CSS
-   -Database: Firebase
-   -Bundler: Parcel
-   -State Management: Redux Toolkit
+#Features 🚀
+  # Dynamic UI: Interactive and user-friendly interface built with ReactJS.
+  # Routing: Single Page Application (SPA) with React Router.
+  # Filtering and Searching: Easily find food items with advanced search and filter features.
+  $ Asynchronous Data Fetching: Fetch and display data dynamically with optimized performance.
+  # Bundling: Built using Parcel for faster development and efficient bundling.
+  # Responsive Design: Optimized for mobile and desktop views.
 
   #🚀 FEATURES 🚀
  #Key Features:

@@ -31,13 +31,13 @@
   ## Folder Structure 📁
 
        Food_Villa/
-├── src/
-│   ├── components/   # Reusable React components
-│   ├── pages/        # Page-level components
-│   ├── assets/       # Images, icons, and other static assets
-│   ├── utils/        # Utility functions and helpers
-│   └── App.js        # Main App component
-├── public/           # Public files
-├── package.json      # Project metadata and dependencies
-├── .gitignore        # Files to ignore in Git
-└── README.md         # Project documentation
+├── src/\
+│   ├── components/   # Reusable React components\
+│   ├── pages/        # Page-level components\
+│   ├── assets/       # Images, icons, and other static assets\
+│   ├── utils/        # Utility functions and helpers\
+│   └── App.js        # Main App component\
+├── public/           # Public files\
+├── package.json      # Project metadata and dependencies\
+├── .gitignore        # Files to ignore in Git\
+└── README.md         # Project documentation\

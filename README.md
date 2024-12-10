@@ -1,4 +1,4 @@
-#🚀 FOOD VILLA 🚀
+Food Villa 🍴
 Discover nearby restaurants with Food Villa! Search for your favorite spots, browse detailed menus, and seamlessly navigate between pages using our app's intuitive routing. Add dishes to your cart and enjoy a hassle-free dining experience.
 
   #🚀TECH STACK🚀

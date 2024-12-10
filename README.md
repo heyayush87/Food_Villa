@@ -16,6 +16,9 @@
   - 𝐉𝐚𝐯𝐚𝐒𝐜𝐫𝐢𝐩𝐭 (𝐄𝐒𝟔): Core language for scripting.
   - 𝐀𝐏𝐈𝐬: Integration for fetching real-time data.
 
+# Images 
+ 
+
  # Installation & Setup 📦
 
   1. ## Clone the Repository: 

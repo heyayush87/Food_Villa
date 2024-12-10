@@ -10,9 +10,9 @@
   • 𝐑𝐞𝐬𝐩𝐨𝐧𝐬𝐢𝐯𝐞 𝐃𝐞𝐬𝐢𝐠𝐧: Optimized for mobile and desktop views.\
 
 # Technologies Used 🛠️
-  - **ReactJS**: For building the user interface.
-  - Parcel: For blazing-fast development and bundling.
-  - Tailwind CSS: For styling and responsive design.
-  - JavaScript (ES6): Core language for scripting.
-  - APIs: Integration for fetching real-time data.
+  - 𝐑𝐞𝐚𝐜𝐭𝐉𝐒: For building the user interface.
+  - 𝐏𝐚𝐫𝐜𝐞𝐥: For blazing-fast development and bundling.
+  - 𝐓𝐚𝐢𝐥𝐰𝐢𝐧𝐝 𝐂𝐒𝐒: For styling and responsive design.
+  - 𝐉𝐚𝐯𝐚𝐒𝐜𝐫𝐢𝐩𝐭 (𝐄𝐒𝟔): Core language for scripting.
+  - 𝐀𝐏𝐈𝐬: Integration for fetching real-time data.
 

@@ -17,8 +17,16 @@
   - 𝐀𝐏𝐈𝐬: Integration for fetching real-time data.
 
 # Images 
+- RESTAURANT PAGE
 ![Alt text](https://github.com/heyayush87/Food_Villa/blob/d04f673eb4b2c139fd88e6309ef391da11fa4509/Screenshot%202024-12-10%20193425.png)
 ![Alt text](https://github.com/heyayush87/Food_Villa/blob/4ba0d08a15c5fda346734cbf9e60460968f981bb/Screenshot%202024-12-10%20193402.png)
+
+- MENU PAGE
+  ![Alt text](https://github.com/heyayush87/Food_Villa/blob/693f1c8a83ca390dafc5075139625c79df72fc7b/Screenshot%202024-12-10%20193450.png)
+  
+-CART PAGE
+  ![Alt text]()
+
 
  # Installation & Setup 📦
 

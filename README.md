@@ -41,3 +41,12 @@
 ├── package.json            Project metadata and dependencies\
 ├── .gitignore              Files to ignore in Git\
 └── README.md               Project documentation\
+
+
+# Key Components 🧩
+
+ 1.𝐍𝐚𝐯𝐛𝐚𝐫: Interactive navigation menu.
+ 2.𝐇𝐨𝐦𝐞 𝐏𝐚𝐠𝐞: Displays featured food items with search and filter options.
+ 3.𝐅𝐨𝐨𝐝 𝐃𝐞𝐭𝐚𝐢𝐥𝐬: Showcases details of selected food items.
+ 4.𝐂𝐚𝐫𝐭: Handles the addition and management of selected food items.
+ 5.𝐀𝐏𝐈 𝐈𝐧𝐭𝐞𝐠𝐫𝐚𝐭𝐢𝐨𝐧: Fetches food data dynamically from an external source.

@@ -2,7 +2,7 @@
    • A dynamic and responsive food delivery web application built using ReactJS, showcasing efficient design and functionality for modern web development.
 
 # Features 🚀
-  • #Dynamic UI:# Interactive and user-friendly interface built with ReactJS.\
+  • #Dynamic UI: Interactive and user-friendly interface built with ReactJS.\
   • Routing: Single Page Application (SPA) with React Router.\
   • Filtering and Searching: Easily find food items with advanced search and filter features.
   • Asynchronous Data Fetching: Fetch and display data dynamically with optimized performance.

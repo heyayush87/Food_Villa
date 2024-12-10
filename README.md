@@ -31,8 +31,8 @@
   ## Folder Structure 📁
 
        Food_Villa/
-├── src/\
-│   ├── components/ \        Reusable React components\
+├── src/ \
+│   ├── components/         Reusable React components\
 │   ├── pages/              Page-level components\
 │   ├── assets/             Images, icons, and other static assets\
 │   ├── utils/              Utility functions and helpers\

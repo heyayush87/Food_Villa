@@ -18,7 +18,7 @@
 
 # Images 
 ![Alt text](https://github.com/heyayush87/Food_Villa/blob/d04f673eb4b2c139fd88e6309ef391da11fa4509/Screenshot%202024-12-10%20193425.png)
- 
+![Alt text](https://github.com/heyayush87/Food_Villa/blob/4ba0d08a15c5fda346734cbf9e60460968f981bb/Screenshot%202024-12-10%20193402.png)
 
  # Installation & Setup 📦
 

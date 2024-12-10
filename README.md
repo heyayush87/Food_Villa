@@ -18,5 +18,7 @@
 
  # Installation & Setup 📦
 
-  1. ## Clone the Repository:
+  1. ## Clone the Repository: 
+    - git clone https://github.com/heyayush87/Food_Villa.git
+    - cd Food_Villa 
 

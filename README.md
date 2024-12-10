@@ -32,7 +32,7 @@
 
        Food_Villa/
 ├── src/\
-│   ├── components/      \n  # Reusable React components\
+│   ├── components/         Reusable React components\
 │   ├── pages/             # Page-level components\
 │   ├── assets/            # Images, icons, and other static assets\
 │   ├── utils/             # Utility functions and helpers\

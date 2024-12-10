@@ -32,11 +32,11 @@
 
        Food_Villa/
 ├── src/\
-│   ├── components/   "\t"      # Reusable React components\
-│   ├── pages/       "\t"      # Page-level components\
-│   ├── assets/      "\t"     # Images, icons, and other static assets\
-│   ├── utils/       "\t"     # Utility functions and helpers\
-│   └── App.js       "\t"     # Main App component\
+│   ├── components/    ---    # Reusable React components\
+│   ├── pages/         ---    # Page-level components\
+│   ├── assets/           # Images, icons, and other static assets\
+│   ├── utils/            # Utility functions and helpers\
+│   └── App.js            # Main App component\
 ├── public/              # Public files\
 ├── package.json         # Project metadata and dependencies\
 ├── .gitignore           # Files to ignore in Git\

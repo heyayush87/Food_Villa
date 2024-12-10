@@ -35,7 +35,7 @@
 
 
 # CART
-  ![Alt text]()
+  ![Alt text](https://github.com/heyayush87/Food_Villa/blob/f3cb11698c47161b9691f6773643ec9aa8fe12c7/Screenshot%202024-12-10%20193548.png)
 
   
 

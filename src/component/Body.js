@@ -10,7 +10,7 @@ const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [search, setSearch] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  console.log(RestaurantsList);
+  // console.log(RestaurantsList);
 
   async function getdata() {
     try {
@@ -43,16 +43,16 @@ const Body = () => {
     <TempShimmer />
   ) : (
     <>
-      <div className="p-3 bg-slate-600 my-1">
+      <div className="p-3 bg-white my-1">
         <input
           type="text"
           placeholder="Search"
-          className="focus:bg-slate-400"
+          className="h-[35px] w-20 lg:w-[300px] md:w-52 sm:w-40 text-center text-lg border-2 border-[#818080] "
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <button
-          className="p-1 m-1 bg-orange-600 hover:bg-orange-300 text-white rounded-md"
+          className="p-2 m-1 bg-orange-600 hover:bg-orange-300 text-white rounded-md"
           onClick={() => {
             const data = filterdata(search, restaurants);
             setFilteredRestaurants(data);

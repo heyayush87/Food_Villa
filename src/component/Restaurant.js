@@ -2,10 +2,10 @@ import { IMG_URL } from "../Constant";
 
 const Restaurant = ({ cloudinaryImageId, name, cuisines, sla }) => {
   return (
-    <div className="  p-2 m-5 shadow-lg bg-slate-500 h-full w-52 overflow-hidden rounded-lg">
+    <div className="w-[250px]  px-[10px] py-[5px] rounded-[5px] transition duration-300 ease-in-out hover:scale-110 shadow-md">
       <img src={IMG_URL + cloudinaryImageId} />
 
-      <h2 className="font-bold text-xl">{name}</h2>
+      <h3 className="m-[2px] font-Arvo font-normal">{name}</h3>
       <h5 className="text-wrap whitespace-normal overflow-hidden text-ellipsis">
         {cuisines.join(",")}
       </h5>

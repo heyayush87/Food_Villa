@@ -1,6 +1,9 @@
 export const IMG_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
+export const logo =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyhTMxvzg3AyWrX7Fvd7gNQb-tQSadgZiIwA&s";
+
 export const MENU_API =
   "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.385044&lng=78.486671&restaurantId=";
 
@@ -7241,9 +7244,6 @@ export const RestaurantsList =
 
 export const restmenu =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.148636167537521&lng=77.61002194136381&restaurantId=23353&catalog_qa=undefined&submitAction=ENTER";
-
-export const dominos =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.148636167537521&lng=77.61002194136381&restaurantId=337620&catalog_qa=undefined&submitAction=";
 
 export const RestMenu =
   // 20240928141750

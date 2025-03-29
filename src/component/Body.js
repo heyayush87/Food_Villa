@@ -46,6 +46,7 @@ const Body = () => {
       <div className="p-3 bg-white my-1">
         <input
           type="text"
+          data-testid="searchinput"
           placeholder="Search"
           className="h-[35px] w-20 lg:w-[300px] md:w-52 sm:w-40 text-center text-lg border-2 border-[#818080] "
           value={search}

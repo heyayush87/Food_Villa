@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { IMG_URL } from "../Constant";
 import TempShimmer from "./TempShimmer";
 import useRestaurant from "../utils/useRestaurant";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
@@ -8,38 +7,41 @@ import RestaurantMenuitem from "./RestaurantMenuitem";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
-
   const ResDetails = useRestaurant(id);
-  const resMenu = useRestaurantMenu(id);
-  const dummydata = "dummy";
-
+  const { resMenu, loading } = useRestaurantMenu(id); // Destructure menu & loading state
   const [showindex, setshowindex] = useState(null);
 
-  return !ResDetails ? (
-    <TempShimmer />
-  ) : (
-    <>
-      <div className="text-center ">
-        <div>
-          <h1 className="font-bold my-6 text-2xl">{ResDetails.name}</h1>
-        </div>
+  // If menu is still loading, show shimmer effect
+  if (loading) {
+    return <TempShimmer />;
+  }
 
-        <div className="text-center">
-          <h1 className="font-bold">Menu</h1>
-          {resMenu.map((item, index) => (
-            <RestaurantMenuitem
-              key={index}
-              item={item?.card?.card}
-              dummy={dummydata}
-              showitem={index === showindex} // Determines if the current accordion is open
-              setshowindex={
-                () => setshowindex(index === showindex ? null : index) // Toggle logic: close if clicked again
-              }
-            />
-          ))}
-        </div>
-      </div>
-    </>
+  return (
+    <div className="text-center">
+      {/* Restaurant Name */}
+      <h1 className="font-bold my-6 text-2xl">
+        {ResDetails?.name || "Loading..."}
+      </h1>
+
+      {/* Restaurant Menu */}
+      <h1 className="font-bold">Menu</h1>
+
+      {resMenu && resMenu.length > 0 ? (
+        resMenu.map((item, index) => (
+          <RestaurantMenuitem
+            key={index}
+            item={item?.card?.card}
+            showitem={index === showindex}
+            setshowindex={() =>
+              setshowindex(index === showindex ? null : index)
+            }
+          />
+        ))
+      ) : (
+        <p>No menu available</p>
+      )}
+    </div>
   );
 };
+
 export default RestaurantMenu;

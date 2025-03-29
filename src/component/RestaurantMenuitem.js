@@ -1,8 +1,8 @@
 import React from "react";
-import { useState } from "react";
 import Foodlist from "./Foodlist";
+
 const RestMenuitem = ({ item, showitem, setshowindex, dummy }) => {
-  // console.log(item);
+  // console.log("food item", item.itemCards);
   // console.log(dummy);
 
   const handleclick = () => {
@@ -17,8 +17,9 @@ const RestMenuitem = ({ item, showitem, setshowindex, dummy }) => {
         onClick={handleclick}
       >
         <span>
-          {item.title} ({item?.itemCards?.length})
+          {item?.title || "Loading..."} ({item?.itemCards?.length || 0})
         </span>
+
         <span>⬇️ </span>
       </div>
 

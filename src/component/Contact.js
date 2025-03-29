@@ -1,33 +1,25 @@
 import React, { useState } from "react";
 
-// controlled components
-
 const contact = () => {
-  const [name, setname] = useState("");
-
-  const handlechange = (event) => {
-    setname(event.target.value);
-  };
-  const handleclicked = (event) => {
-    event.preventDefault();
-    alert(`Name, ${name}`);
-  };
-
   return (
-    <form onSubmit={handleclicked}>
-      <label>
-        Name:
+    <>
+      <h1> Contact Page</h1>
+      <form className="p-2 m-2 rounded-lg">
         <input
-          className=" shadow-lg p-2 bg-slate-100"
-          type="text"
-          placeholder="type something"
-          value={name}
-          onChange={handlechange}
+          type=""
+          className=" m-2 p-2 border border-black"
+          placeholder="name"
         ></input>
-      </label>
-
-      <button type="submit"> Submit</button>
-    </form>
+        <input
+          type=""
+          className=" m-2 p-2 border border-black"
+          placeholder="message"
+        ></input>
+        <button className="border  border-black m-2 p-2 rounded-lg">
+          Submit
+        </button>
+      </form>
+    </>
   );
 };
 

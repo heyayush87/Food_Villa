@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
-import image from "../img/foodvilla.jpeg";
+
+import { logo } from "../Constant";
 import { Link } from "react-router-dom";
 
 import useLogin from "../utils/useLogin";
@@ -8,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const Logo = () => (
   <a href="/">
-    <img className="h-28 p-3" alt="logo" src={image} />
+    <img className="h-28 p-3" alt="logo" src={logo} />
   </a>
 );
 

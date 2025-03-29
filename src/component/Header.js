@@ -23,7 +23,7 @@ const Header = () => {
   // console.log(CartItems);
 
   return (
-    <div className="flex justify-between bg-red-500 shadow-lg ">
+    <div className="flex justify-between bg-slate-300 shadow-lg ">
       <Logo />
       <div className="navbar">
         <ul className="flex p py-10 mr-10">

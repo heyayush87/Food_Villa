@@ -38,7 +38,7 @@ const RestaurantMenu = () => {
           />
         ))
       ) : (
-        <p>No menu available</p>
+        <p>Use CORS Extension Bcz i am usimng swiggy live api</p>
       )}
     </div>
   );

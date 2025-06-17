@@ -10,7 +10,6 @@ const RestaurantMenu = () => {
   const { ResDetails, error } = useRestaurant(id);
   const { resMenu, loading } = useRestaurantMenu(id);
   const [showindex, setshowindex] = useState(null);
- 
 
   if (error) {
     return <div className="text-red-500 text-center">{error}</div>;
@@ -31,7 +30,8 @@ const RestaurantMenu = () => {
       <h2 className="font-bold text-lg sm:text-xl mb-4">Menu</h2>
 
       <div className="flex flex-col gap-4">
-        {resMenu && resMenu.length > 0 ? (
+        {resMenu &&
+          resMenu.length > 0 &&
           resMenu.map((item, index) => (
             <RestaurantMenuitem
               key={index}
@@ -41,12 +41,7 @@ const RestaurantMenu = () => {
                 setshowindex(index === showindex ? null : index)
               }
             />
-          ))
-        ) : (
-          <p className="text-gray-500">
-            Use CORS Extension because I am using Swiggy live API
-          </p>
-        )}
+          ))}
       </div>
     </div>
   );

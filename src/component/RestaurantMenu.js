@@ -8,38 +8,41 @@ import RestaurantMenuitem from "./RestaurantMenuitem";
 const RestaurantMenu = () => {
   const { id } = useParams();
   const ResDetails = useRestaurant(id);
-  const { resMenu, loading } = useRestaurantMenu(id); // Destructure menu & loading state
+  const { resMenu, loading } = useRestaurantMenu(id);
   const [showindex, setshowindex] = useState(null);
 
-  // If menu is still loading, show shimmer effect
   if (loading) {
     return <TempShimmer />;
   }
 
   return (
-    <div className="text-center">
+    <div className="max-w-2xl mx-auto px-2 py-4 text-center">
       {/* Restaurant Name */}
-      <h1 className="font-bold my-6 text-2xl">
+      <h1 className="font-bold my-6 text-2xl sm:text-3xl">
         {ResDetails?.name || "Loading..."}
       </h1>
 
       {/* Restaurant Menu */}
-      <h1 className="font-bold">Menu</h1>
+      <h2 className="font-bold text-lg sm:text-xl mb-4">Menu</h2>
 
-      {resMenu && resMenu.length > 0 ? (
-        resMenu.map((item, index) => (
-          <RestaurantMenuitem
-            key={index}
-            item={item?.card?.card}
-            showitem={index === showindex}
-            setshowindex={() =>
-              setshowindex(index === showindex ? null : index)
-            }
-          />
-        ))
-      ) : (
-        <p>Use CORS Extension Bcz i am usimng swiggy live api</p>
-      )}
+      <div className="flex flex-col gap-4">
+        {resMenu && resMenu.length > 0 ? (
+          resMenu.map((item, index) => (
+            <RestaurantMenuitem
+              key={index}
+              item={item?.card?.card}
+              showitem={index === showindex}
+              setshowindex={() =>
+                setshowindex(index === showindex ? null : index)
+              }
+            />
+          ))
+        ) : (
+          <p className="text-gray-500">
+            Use CORS Extension because I am using Swiggy live API
+          </p>
+        )}
+      </div>
     </div>
   );
 };

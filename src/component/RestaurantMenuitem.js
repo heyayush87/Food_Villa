@@ -2,25 +2,20 @@ import React from "react";
 import Foodlist from "./Foodlist";
 
 const RestMenuitem = ({ item, showitem, setshowindex, dummy }) => {
-  // console.log("food item", item.itemCards);
-  // console.log(dummy);
-
   const handleclick = () => {
-    // console.log("clicked");
     setshowindex(!showitem);
   };
 
   return (
     <>
       <div
-        className="w-6/12  mx-auto my-5 shadow-xl pb-5 bg-slate-100  flex justify-between font-bold cursor-pointer"
+        className="w-full max-w-xl mx-auto my-5 shadow-xl pb-5 bg-slate-100 flex justify-between items-center font-bold cursor-pointer px-4 py-3 transition hover:bg-slate-200 min-w-0"
         onClick={handleclick}
       >
-        <span>
+        <span className="truncate">
           {item?.title || "Loading..."} ({item?.itemCards?.length || 0})
         </span>
-
-        <span>⬇️ </span>
+        <span>⬇️</span>
       </div>
 
       {showitem &&

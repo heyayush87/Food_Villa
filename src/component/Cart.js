@@ -10,17 +10,22 @@ const Cart = () => {
     dispatch(clearcart());
   };
   return (
-    <div className="text-center font-bold justify-between">
-      <h1>Cart</h1>
-      <button
-        onClick={handleclearcart}
-        className="p-2 m-2 rounded-2xl  bg-black text-white"
-      >
-        clearcart
-      </button>
-      <div>
+    <div className="max-w-3xl mx-auto px-2 py-4">
+      <h1 className="text-center text-2xl font-bold mb-4">Cart</h1>
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
+        <button
+          onClick={handleclearcart}
+          className="p-2 rounded-2xl bg-black text-white w-full sm:w-auto"
+        >
+          Clear Cart
+        </button>
+        <span className="text-lg font-semibold">
+          {Cartitems.length} item{Cartitems.length !== 1 ? "s" : ""}
+        </span>
+      </div>
+      <div className="flex flex-col gap-4">
         {Cartitems.length === 0 ? (
-          <p>Your cart is empty</p>
+          <p className="text-center text-gray-500">Your cart is empty</p>
         ) : (
           Cartitems.map((item, index) => <Foodlist key={index} item={item} />)
         )}

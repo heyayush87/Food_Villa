@@ -1,30 +1,34 @@
 import { useState, useEffect } from "react";
 
 const useRestaurant = (id) => {
-  const [ResDetails, setResDetails] = useState([]);
+  const [ResDetails, setResDetails] = useState(null);
+  const [error, setError] = useState(null);
 
   const fetchResDetails = async () => {
     try {
       const data = await fetch(
-        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9532395&lng=77.70156639999999&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`
+        `http://localhost:5000/api/foodvilla-menu?id=${id}`
       );
       const json = await data.json();
 
-      // console.log("API Response from restaurant:", json);
-      setResDetails(json.data.cards[2]?.card?.card?.info || []);
-
-      if (json?.data?.cards) {
-      } else {
-        console.warn("Unexpected data structure from API", json);
+      if (!json?.data?.cards) {
+        setError("No restaurant data found.");
+        setResDetails(null);
+        return;
       }
+
+      setResDetails(json.data.cards[2]?.card?.card?.info || null);
     } catch (error) {
-      console.error("Error fetching restaurant details:", error);
+      setError("Error fetching restaurant details.");
+      setResDetails(null);
     }
   };
 
   useEffect(() => {
     fetchResDetails();
-  }, []);
-  return ResDetails;
+  }, [id]);
+
+  return { ResDetails, error };
 };
+
 export default useRestaurant;

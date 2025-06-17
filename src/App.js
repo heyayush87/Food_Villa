@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
 import Footer from "./component/Footer";
+import Privacy from "./component/Privacy";
 
 import About from "./component/About";
 import Error from "./component/Error";
@@ -10,6 +11,7 @@ import Contact from "./component/Contact";
 import Cart from "./component/Cart";
 import RestaurantMenu from "./component/RestaurantMenu";
 import Profilej from "./component/Profilej";
+
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import TempShimmer from "./component/TempShimmer";
 
@@ -22,11 +24,13 @@ const Grocery = lazy(() => import("./component/Grocery"));
 const Applayout = () => {
   return (
     <Provider store={appStore}>
-      <>
+      <div className="min-h-screen flex flex-col">
         <Header />
-        <Outlet />
+        <main className="flex-grow">
+          <Outlet />
+        </main>
         <Footer />
-      </>
+      </div>
     </Provider>
   );
 };
@@ -73,6 +77,10 @@ const appRouter = createBrowserRouter([
             <Grocery />
           </Suspense>
         ),
+      },
+      {
+        path: "/privacy",
+        element: <Privacy />,
       },
     ],
   },

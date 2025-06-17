@@ -7,7 +7,7 @@ const useRestaurantMenu = (id) => {
   const fetchResDetails = async () => {
     try {
       const data = await fetch(
-        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9532395&lng=77.70156639999999&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`
+        `http://localhost:5000/api/foodvilla-menu?id=${id}`
       );
 
       if (!data.ok) {

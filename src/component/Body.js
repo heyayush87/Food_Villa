@@ -4,22 +4,29 @@ import Restaurant from "./Restaurant";
 import { Link } from "react-router-dom";
 import { filterdata } from "../utils/helper";
 import useOnline from "../utils/useOnline";
-import { RestaurantsList } from "../Constant";
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [search, setSearch] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   async function getdata() {
     try {
+      setLoading(true);
+      const response = await fetch(
+        "http://localhost:5000/api/foodvilla-restaurants"
+      );
+      const Data = await response.json();
       const restaurantsData =
-        RestaurantsList?.data?.cards?.[1]?.card?.card?.gridElements
+        Data?.data?.cards?.[1]?.card?.card?.gridElements
           ?.infoWithStyle?.restaurants;
       setRestaurants(restaurantsData);
       setFilteredRestaurants(restaurantsData);
     } catch (error) {
       console.error("Error fetching data", error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -31,10 +38,13 @@ const Body = () => {
   if (!isonline) {
     return <h1>Offline - Your internet is not working</h1>;
   }
+ 
+  if (loading) {
+   
+    return <TempShimmer variant="card" />;
+  }
 
-  return restaurants?.length === 0 ? (
-    <TempShimmer />
-  ) : (
+  return (
     <>
       <div className="p-3 bg-white my-1 flex flex-col sm:flex-row items-center gap-2">
         <input
@@ -70,7 +80,7 @@ const Body = () => {
           <h2>No restaurants found</h2>
         )}
       </div>
-    </>
+      </>
   );
 };
 

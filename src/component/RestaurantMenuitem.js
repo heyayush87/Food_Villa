@@ -9,7 +9,7 @@ const RestMenuitem = ({ item, showitem, setshowindex, dummy }) => {
   return (
     <>
       <div
-        className="w-full max-w-xl mx-auto my-5 shadow-xl pb-5 bg-slate-100 flex justify-between items-center font-bold cursor-pointer px-4 py-3 transition hover:bg-slate-200 min-w-0"
+        className="w-full max-w-xl mx-auto shadow-xl bg-slate-100 flex justify-between items-center font-bold cursor-pointer px-4 py-3 transition hover:bg-slate-200 min-w-0"
         onClick={handleclick}
       >
         <span className="truncate">

@@ -7,12 +7,17 @@ import RestaurantMenuitem from "./RestaurantMenuitem";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
-  const ResDetails = useRestaurant(id);
+  const { ResDetails, error } = useRestaurant(id);
   const { resMenu, loading } = useRestaurantMenu(id);
   const [showindex, setshowindex] = useState(null);
+ 
+
+  if (error) {
+    return <div className="text-red-500 text-center">{error}</div>;
+  }
 
   if (loading) {
-    return <TempShimmer />;
+    return <TempShimmer variant="menu" />;
   }
 
   return (

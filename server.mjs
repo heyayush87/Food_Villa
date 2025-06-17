@@ -5,6 +5,10 @@ import fetch from "node-fetch";
 const app = express();
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Food Villa Proxy API is running 🎉");
+});
+
 // Proxy for restaurant list
 app.get("/api/foodvilla-restaurants", async (req, res) => {
   const url =

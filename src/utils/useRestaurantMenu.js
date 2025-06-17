@@ -7,7 +7,7 @@ const useRestaurantMenu = (id) => {
   const fetchResDetails = async () => {
     try {
       const data = await fetch(
-        `http://localhost:5000/api/foodvilla-menu?id=${id}`
+        `https://food-villa-sj5t.onrender.com/api/foodvilla-menu?id=${id}`
       );
 
       if (!data.ok) {

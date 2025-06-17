@@ -2,12 +2,14 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "scripts": {
-  "start": "concurrently \"npm run start:client\" \"npm run start:proxy\"",
-  "start:client": "parcel index.html",
-  "start:proxy": "node server.mjs",
-  "build": "parcel build index.html",
-  "test": "jest"
+   "start": "node server.mjs",
+   "start:client": "parcel index.html",
+   "start:proxy": "node server.mjs",
+   "dev": "concurrently \"npm run start:client\" \"npm run start:proxy\"",
+   "build": "parcel build index.html",
+   "test": "jest"
 },
+
   "keywords": [],
   "author": "",
   "license": "ISC",

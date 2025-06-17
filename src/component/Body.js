@@ -15,8 +15,11 @@ const Body = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "http://localhost:5000/api/foodvilla-restaurants"
+        "https://food-villa-sj5t.onrender.com/api/foodvilla-restaurants"
       );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);  
+      }
       const Data = await response.json();
       const restaurantsData =
         Data?.data?.cards?.[1]?.card?.card?.gridElements

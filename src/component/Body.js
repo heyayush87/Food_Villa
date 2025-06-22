@@ -18,12 +18,12 @@ const Body = () => {
         "https://food-villa-sj5t.onrender.com/api/foodvilla-restaurants"
       );
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);  
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
       const Data = await response.json();
       const restaurantsData =
-        Data?.data?.cards?.[1]?.card?.card?.gridElements
-          ?.infoWithStyle?.restaurants;
+        Data?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
       setRestaurants(restaurantsData);
       setFilteredRestaurants(restaurantsData);
     } catch (error) {
@@ -39,17 +39,20 @@ const Body = () => {
 
   const isonline = useOnline();
   if (!isonline) {
-    return <h1>Offline - Your internet is not working</h1>;
+    return (
+      <h1 className="text-center mt-10 text-red-600 font-semibold text-xl">
+        Offline - Your internet is not working
+      </h1>
+    );
   }
- 
+
   if (loading) {
-   
     return <TempShimmer variant="card" />;
   }
 
   return (
     <>
-      <div className="p-3 bg-white my-1 flex flex-col sm:flex-row items-center gap-2">
+      <div className="p-3 bg-white my-1 flex flex-col sm:flex-row items-center gap-2 justify-center">
         <input
           type="text"
           data-testid="searchinput"
@@ -68,22 +71,25 @@ const Body = () => {
           Search
         </button>
       </div>
+
       <div className="flex flex-wrap gap-4 justify-center">
         {filteredRestaurants?.length > 0 ? (
           filteredRestaurants.map((restaurant) => (
             <Link
               to={"/restaurant/" + restaurant.info.id}
               key={restaurant.info.id}
-              className="w-full sm:w-[45%] md:w-[30%] lg:w-[22%] mb-4"
+              className="w-full max-w-xs sm:w-[45%] md:w-[30%] lg:w-[22%] mb-4"
             >
               <Restaurant {...restaurant.info} />
             </Link>
           ))
         ) : (
-          <h2>No restaurants found</h2>
+          <h2 className="text-center text-gray-600 font-medium text-lg">
+            No restaurants found
+          </h2>
         )}
       </div>
-      </>
+    </>
   );
 };
 

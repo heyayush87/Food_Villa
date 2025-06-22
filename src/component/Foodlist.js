@@ -1,44 +1,50 @@
 import { IMG_URL } from "../Constant";
 import { useDispatch } from "react-redux";
 import { additem } from "../utils/cartslice";
+
 const Foodlist = ({ item }) => {
-  // console.log(item);
   const dispatch = useDispatch();
+
   const handleAddItem = () => {
     dispatch(additem(item));
   };
 
   return (
-    <>
-      <div className="w-6/12 mx-auto my-5 flex justify-between">
-        <div>
-          <span className="font-semibold">{item?.name}</span>
-          <span className="pl-2">
-            ₹ {item?.price ? item.price / 100 : item?.defaultPrice / 100}
+    <div className="w-full max-w-3xl mx-auto my-6 flex flex-col sm:flex-row justify-between gap-4 border-b border-gray-200 pb-4 px-2 sm:px-4">
+      {/* Left Section - Name, Price, Description */}
+      <div className="flex-1">
+        <div className="flex justify-between items-center mb-2">
+          <span className="font-semibold text-base sm:text-lg">
+            {item?.name}
+          </span>
+          <span className="text-sm sm:text-base text-gray-700">
+            ₹{item?.price ? item.price / 100 : item?.defaultPrice / 100}
           </span>
         </div>
-        <div className="w-3/12">
-          <div className="absolute">
-            <button
-              className="p-0 bg-slate-300 shadow-sm "
-              onClick={() => handleAddItem(item)}
-            >
-              Add+
-            </button>
+        <p className="text-sm text-gray-600 mb-2 sm:mb-0">
+          {item?.description}
+        </p>
+      </div>
+
+      {/* Right Section - Image and Add Button */}
+      <div className="w-full sm:w-40 flex flex-col items-center gap-2">
+        {item?.imageId && (
+          <div className="w-full h-28 overflow-hidden rounded-md shadow">
+            <img
+              src={IMG_URL + item.imageId}
+              alt={item?.name || "Food Image"}
+              className="w-full h-full object-cover"
+            />
           </div>
-          <img
-            src={item?.imageId ? IMG_URL + item.imageId : "fallback_image_url"}
-            alt={item?.name || "Food Image"}
-            className="w-22"
-          />
-        </div>
+        )}
+        <button
+          onClick={handleAddItem}
+          className="w-24 sm:w-auto text-xs sm:text-sm bg-slate-200 hover:bg-slate-300 font-medium px-3 py-1 rounded shadow"
+        >
+          Add +
+        </button>
       </div>
-      <div>
-        <div className="w-6/12 mx-auto my-5 flex justify-between p-2 m-2 border-gray-200 border-b-2">
-          <span>{item?.description}</span>
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 

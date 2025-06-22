@@ -2,31 +2,41 @@
  https://food-villa-tan.vercel.app/
 
 # Food Villa 🍴
-   • A dynamic and responsive food delivery web application built using ReactJS, showcasing efficient design and functionality for modern web development.
+   - A dynamic and responsive food delivery web application built using ReactJS, showcasing efficient design and functionality for modern web development.
 
 # 🍽️ FoodVilla - Key Features
-🏠 Home Page
-🍴 Displays a list of restaurants fetched from Swiggy’s API (proxied via backend)
+- 🏠 Home Page
+- 🍴 Displays a list of restaurants fetched from Swiggy’s API (proxied via backend)
 
-🔍 Real-time Search Bar to filter restaurants by name
+-🔍 Real-time Search Bar to filter restaurants by name
 
-⚡ Shimmer UI (Skeleton Loader) while data is being fetched
+- ⚡ Shimmer UI (Skeleton Loader) while data is being fetched
 
-✅ Responsive grid layout for all screen sizes (Mobile, Tablet, Desktop)
+- ✅ Responsive grid layout for all screen sizes (Mobile, Tablet, Desktop)
 
-🧭 Routing & Navigation
-🔗 React Router DOM v6 used for page navigation
+# 🧭 Routing & Navigation
+- 🔗 React Router DOM v6 used for page navigation
 
-📄 Routes like /, /restaurant/:id, and /about
+- 📄 Routes like /, /restaurant/:id, and /about
 
-📦 Dynamic Route for individual restaurant menu details
+- 📦 Dynamic Route for individual restaurant menu details
 
-🍛 Restaurant Menu Page
-🍽️ Lists all menu items for a selected restaurant
+# 🍛 Restaurant Menu Page
+- 🍽️ Lists all menu items for a selected restaurant
 
-💰 Displays pricing, item details, and availability
+- 💰 Displays pricing, item details, and availability
 
-🎨 Clean and responsive design for the menu layout
+- 🎨 Clean and responsive design for the menu layout
+
+# 🛒 Cart Functionality (Redux Toolkit)
+
+- ➕ Add and remove items from cart
+
+- 🔢 Increment/decrement quantity
+
+- 💾 State managed globally using Redux Toolkit slice
+
+- 🧹 Clear cart on checkout or manually
 
 
 

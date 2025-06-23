@@ -2,14 +2,11 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "scripts": {
-   "start": "node server.mjs",
-   "start:client": "parcel index.html",
-   "start:proxy": "node server.mjs",
-   "dev": "concurrently \"npm run start:client\" \"npm run start:proxy\"",
-   "build": "parcel build index.html",
-   "test": "jest"
-},
-
+    "start": "parcel index.html",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -22,7 +19,6 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "babel-jest": "^29.7.0",
-    "concurrently": "^9.1.2",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.12.0",
@@ -33,7 +29,6 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
     "cors": "^2.8.5",
-    "express": "^5.1.0",
     "node-fetch": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

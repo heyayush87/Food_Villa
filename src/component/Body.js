@@ -11,27 +11,63 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  async function getdata() {
+  const getdata = async () => {
     try {
       setLoading(true);
-      const response = await fetch(
-        "https://food-villa-sj5t.onrender.com/api/foodvilla-restaurants"
-      );
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+
+      const swiggyUrl =
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.148636167537521&lng=77.61002194136381&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+      const proxyUrl = `https://young-term-4e4a.heyayush0709.workers.dev/?url=${encodeURIComponent(
+        swiggyUrl
+      )}`;
+
+      const response = await fetch(proxyUrl);
+
+      // Check if fetch was successful
+      if (!response.ok || response.status === 0) {
+        const text = await response.text();
+        console.error("Proxy error response:", text);
+        throw new Error(`HTTP error! status: ${response.status || "unknown"}`);
       }
-      const Data = await response.json();
-      const restaurantsData =
-        Data?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
-      setRestaurants(restaurantsData);
-      setFilteredRestaurants(restaurantsData);
+
+      // Check content type
+      const contentType = response.headers.get("content-type") || "";
+      if (!contentType.includes("application/json")) {
+        const text = await response.text();
+        console.error("Invalid JSON response:", text);
+        throw new Error("Expected JSON but got non-JSON response");
+      }
+
+      const data = await response.json();
+
+      // Find restaurants from cards[]
+      const cards = data?.data?.cards || [];
+      let restaurants = [];
+
+      for (const card of cards) {
+        const possibleRestaurants =
+          card?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        if (possibleRestaurants) {
+          restaurants = possibleRestaurants;
+          break;
+        }
+      }
+
+      if (restaurants.length === 0) {
+        console.warn("No restaurants found in data structure");
+      }
+
+      setRestaurants(restaurants);
+      setFilteredRestaurants(restaurants);
     } catch (error) {
-      console.error("Error fetching data", error);
+      console.error("Error fetching restaurant list:", error);
     } finally {
       setLoading(false);
     }
-  }
+  };
+  
+  
 
   useEffect(() => {
     getdata();

@@ -6,18 +6,22 @@ const useRestaurantMenu = (id) => {
 
   const fetchResDetails = async () => {
     try {
-      const data = await fetch(
-        `https://food-villa-sj5t.onrender.com/api/foodvilla-menu?id=${id}`
-      );
+      setLoading(true);
 
-      if (!data.ok) {
-        throw new Error(`Error fetching menu: ${data.status}`);
+      const apiUrl = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.148636167537521&lng=77.61002194136381&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`;
+
+      const proxyUrl = `https://young-term-4e4a.heyayush0709.workers.dev/?url=${encodeURIComponent(
+        apiUrl
+      )}`;
+
+      const response = await fetch(proxyUrl);
+
+      if (!response.ok) {
+        throw new Error(`Error fetching menu: ${response.status}`);
       }
 
-      const json = await data.json();
-      // console.log("API Response from menu:", json);
+      const json = await response.json();
 
-      // Dynamically find the menu section
       const menuCards = json?.data?.cards
         ?.find((c) => c?.groupedCard)
         ?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
@@ -27,12 +31,13 @@ const useRestaurantMenu = (id) => {
         );
 
       setResMenu(menuCards || []);
-      setLoading(false); // Set loading to false after fetching
     } catch (err) {
       console.error("Error fetching menu:", err);
+    } finally {
       setLoading(false);
     }
   };
+  
 
   useEffect(() => {
     setLoading(true);

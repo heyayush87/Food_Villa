@@ -6,10 +6,16 @@ const useRestaurant = (id) => {
 
   const fetchResDetails = async () => {
     try {
-      const data = await fetch(
-        `https://food-villa-sj5t.onrender.com/api/foodvilla-menu?id=${id}`
-      );
-      const json = await data.json();
+     
+      const apiUrl = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.148636167537521&lng=77.61002194136381&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`;
+
+      const proxyUrl = `https://young-term-4e4a.heyayush0709.workers.dev/?url=${encodeURIComponent(
+        apiUrl
+      )}`;
+
+      const response = await fetch(proxyUrl);
+      const json = await response.json();
+
 
       if (!json?.data?.cards) {
         setError("No restaurant data found.");
